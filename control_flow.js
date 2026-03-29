@@ -1,47 +1,17 @@
-let userRole = "admin";
-let accessLevel;
-let isLoggedIn = true;
-let userMessage;
-
-if (userRole === "admin") {
-    accessLevel = "Full access granted";
-} else if (userRole === "manager") {
-    accessLevel = "Limited access granted";
-} else {
-    accessLevel = "No access granted";
-}
-
-console.log("Access Level:", accessLevel);
-
-if (isLoggedIn) {
-    if (userRole === "admin") {
-        userMessage = "Welcome, Admin!";
-    } else {
-        userMessage = "Welcome, User!";
-    }
-} else {
-    userMessage = "Please log in to access the system.";
-}
-console.log(userMessage);
-
-let userType = "subscriber";
-let userCategory;
-
-switch (userType) {
-    case "admin":
-        userCategory = "Administrator";
+let userRole = 'employee'; // This can be 'admin', 'employee', 'subscriber', or any other role
+let userAuthorized; 
+switch (userRole) {
+    case 'admin':
+        userAuthorized = "Admin access granted.";
         break;
-    case "manager":
-        userCategory = "Manager";
+    case 'employee':
+        userAuthorized = "Dietary Services";
         break;
-    case "subscriber":
-        userCategory = "Subscriber";
+    case 'suscriber':
+        userAuthorized = "Partial access granted.";
         break;
     default:
-        userCategory = "Unknown";
+        userAuthorized = "You do not have access.";
 }
-console.log("User Category:", userCategory);
 
-let isAuthenticated = true;
-let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
-console.log("Authentication Status:", authenticationStatus);
+console.log(userAuthorized);    
